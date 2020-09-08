@@ -1,9 +1,22 @@
 require 'pexels'
 class Photo < ApplicationRecord
 
-  client = Pexels::Client.new(ENV["CLIENT_ID"])
+  def self.search(query)
+    client = Pexels::Client.new(ENV["CLIENT_ID"])
+    client.photos.search(query , per_page: 20).photos
 
-  client.photos.search('clouds')
+  end
+
+  def self.curate
+    client = Pexels::Client.new(ENV["CLIENT_ID"])
+    client.photos.curated(per_page: 5).photos
+  end
+
+
+
+
+
+
 
 
 end
