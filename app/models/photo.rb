@@ -14,7 +14,7 @@ class Photo < ApplicationRecord
 
 
 
-
+# YERRRRRRR
 
 
 
